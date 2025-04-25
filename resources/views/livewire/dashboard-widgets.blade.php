@@ -1,6 +1,6 @@
 
 <div class="bg-white text-red p-4 shadow rounded">
-    <h4>Total Users dasdf: {{ $userCount }}</h4>
+    <h4>Total Users dasdfsadasdf: {{ $userCount }}</h4>
     <div>
         <h1>{{ $count }}</h1>
      

@@ -15,6 +15,7 @@
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6",
+        "seav-seyla/announcements": "dev-main",
         "seav-seyla/api-response": "dev-main"
     },
     "require-dev": {
@@ -30,7 +31,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "packages/seavseyla/ApiResponse"
+            "url": "packages/seavseyla/announcements"
         }
     ],
     "autoload": {

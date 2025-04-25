@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f32e16d74f996302e1251b8fb04ddf0",
+    "content-hash": "a0bc80904f8a61da82e6bff9a3759499",
     "packages": [
         {
             "name": "backpack/basset",
@@ -3939,16 +3939,55 @@
             "time": "2024-04-27T21:32:50+00:00"
         },
         {
-            "name": "seav-seyla/api-response",
+            "name": "seav-seyla/announcements",
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "packages/seavseyla/ApiResponse",
-                "reference": "019f54ce062bc137476276513b8138641f8ed68b"
+                "url": "packages/seavseyla/announcements",
+                "reference": "336cb48bdf9cb5e920c1dbb7d8f4c41efe9d28d9"
             },
-            "require": {
-                "php": "^8.2"
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SeavSeyla\\Announcements\\AnnouncementPackageServiceProvider"
+                    ]
+                }
             },
+            "autoload": {
+                "psr-4": {
+                    "SeavSeyla\\Announcements\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Seav Seyla",
+                    "email": "Mrrseyla.758@gmail.com"
+                }
+            ],
+            "description": "A Laravel package for CRUD announcements.",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "seav-seyla/api-response",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seyla123/api-response.git",
+                "reference": "531b11e3f5961373667103749ef962e3eef747a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seyla123/api-response/zipball/531b11e3f5961373667103749ef962e3eef747a3",
+                "reference": "531b11e3f5961373667103749ef962e3eef747a3",
+                "shasum": ""
+            },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3962,6 +4001,7 @@
                     "SeavSeyla\\ApiResponse\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3972,9 +4012,11 @@
                 }
             ],
             "description": "A Laravel package for API response.",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/Seyla123/api-response/issues",
+                "source": "https://github.com/Seyla123/api-response/tree/main"
+            },
+            "time": "2025-04-23T02:01:04+00:00"
         },
         {
             "name": "symfony/clock",
@@ -8831,6 +8873,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "seav-seyla/announcements": 20,
         "seav-seyla/api-response": 20
     },
     "prefer-stable": true,
