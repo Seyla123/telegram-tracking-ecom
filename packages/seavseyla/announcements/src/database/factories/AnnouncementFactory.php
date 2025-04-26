@@ -24,12 +24,14 @@ class AnnouncementFactory extends Factory
      */
     public function definition(): array
     {
-        $userModel = config('announcements.user_model', \App\Models\User::class);
+        $createByModel = config('announcements.create_by_model', \App\Models\User::class);
+        $createByPrimaryKey = config('announcements.create_by_primary_key', 'user_id');
+
         return [
             'title' => $this->faker->sentence(),
             'content' => $this->faker->paragraph(),
             'status' => $this->faker->randomElement(['active', 'inactive', 'draft']),
-            config('announcements.create_by_table_name', 'user_id') => $userModel::factory(),
+            $createByPrimaryKey => $createByModel::factory(),
         ];
     }
 }

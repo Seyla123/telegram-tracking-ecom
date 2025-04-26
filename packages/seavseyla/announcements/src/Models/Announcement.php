@@ -47,10 +47,10 @@ class Announcement extends Model
     public function user(): BelongsTo
     {
         // Get the User model class name from the package configuration
-        $userModelClass = config('announcements.user_model');
+        $userModelClass = config('announcements.create_by_model');
 
         // Get the foreign key column name from the package configuration
-        $foreignKey = config('announcements.create_by_primary_key', 'user_id'); // Provide a default fallback
+        $foreignKey = config('announcements.create_by_primary_key');
 
         // Ensure the user model class exists before trying to create the relationship
         if (!class_exists($userModelClass)) {

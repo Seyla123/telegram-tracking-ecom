@@ -10,7 +10,6 @@ return [
    | The default table name to use for the announcements table.
    |
    */
-
     'table_name' => 'announcements',
 
     /*
@@ -21,13 +20,26 @@ return [
     | The default primary key to use for the created by table.
     |
     */
-
     'create_by_primary_key' => 'user_id',
 
     /*
-     * The user model that should be used for announcements
-     */
-    'user_model' => \App\Models\User::class,
+    |--------------------------------------------------------------------------
+    | Default Model of Created By
+    |--------------------------------------------------------------------------
+    |
+    | The default model that should be used for announcements
+    |
+    */
+    'create_by_model' => \App\Models\User::class,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Amount of records to create when seeding
+    |--------------------------------------------------------------------------
+    |
+    | The amount of records to create when running the seeder.
+    |
+    */
     'seed_count' => 10,
 ];
+

@@ -27,9 +27,8 @@ class MakeAnnouncementsSeeder extends Command
     public function handle()
     {
         // Get the desired name from the argument
-        $name = config('announcements.user_model', \App\Models\User::class);
-        $model = '\\' . $name;
-        $createBy = config('announcements.create_by_primary_key', 'user_id');
+        $name = config('announcements.create_by_model', \App\Models\User::class);
+       
         $count = config('announcements.seed_count', 10);
         // Determine the target path in the user's application
         // Using database_path() points to the 'database' directory of the user's Laravel project

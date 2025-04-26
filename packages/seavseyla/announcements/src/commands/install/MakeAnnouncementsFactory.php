@@ -27,7 +27,7 @@ class MakeAnnouncementsFactory extends Command
     public function handle()
     {
         // Get the desired name from the argument
-        $name = config('announcements.user_model', \App\Models\User::class);
+        $name = config('announcements.create_by_model', \App\Models\User::class);
         $model = '\\' . $name;
         $createBy = config('announcements.create_by_primary_key', 'user_id');
 

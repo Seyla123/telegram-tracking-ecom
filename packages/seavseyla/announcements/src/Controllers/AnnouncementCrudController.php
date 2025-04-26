@@ -3,6 +3,7 @@
 namespace SeavSeyla\Announcements\Controllers;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
+use SeavSeyla\Announcements\Models\Announcement;
 use SeavSeyla\Announcements\Requests\AnnouncementRequest;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -18,6 +19,10 @@ class AnnouncementCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation {
+        store as traitStore;
+    }
+
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -49,7 +54,7 @@ class AnnouncementCrudController extends CrudController
                 return $entry->user ? $entry->user->name : '-';
             });
 
-        CRUD::column('status')->type('text')->wrapper([
+        CRUD::column('status')->wrapper([
             'class' => function ($crud, $column, $entry) {
                 return match ($entry->status) {
                     'active' => 'badge bg-success',
@@ -58,7 +63,7 @@ class AnnouncementCrudController extends CrudController
                 };
             }
         ]);
-        
+
         CRUD::addButtonFromModelFunction('line', 'Send', 'sendButton', 'beginning');
     }
 
@@ -81,14 +86,11 @@ class AnnouncementCrudController extends CrudController
                 'draft' => 'Draft'
             ])
             ->default('draft');
-
-        //  get current user
-        Crud::addField([
-            'name' => 'user_id',
-            'type' => 'hidden',
-            'value' => backpack_auth()->id()
-        ]);
-
+    
+        Announcement::creating(function ($entry) {
+            $entry->user_id = backpack_user()->id;
+        });
+        
         /**
          * Fields can be defined using the fluent syntax:
          * - CRUD::field('price')->type('number');
@@ -136,4 +138,5 @@ class AnnouncementCrudController extends CrudController
             ->format('DD/MM/YYYY HH:mm');
 
     }
+
 }
