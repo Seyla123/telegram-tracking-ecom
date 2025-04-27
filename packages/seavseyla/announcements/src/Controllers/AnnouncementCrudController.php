@@ -19,9 +19,6 @@ class AnnouncementCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation {
-        store as traitStore;
-    }
 
 
     /**
@@ -31,7 +28,7 @@ class AnnouncementCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\SeavSeyla\Announcements\Models\Announcement::class);
+        CRUD::setModel(Announcement::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/announcement');
         CRUD::setEntityNameStrings('announcement', 'announcements');
     }
@@ -86,15 +83,10 @@ class AnnouncementCrudController extends CrudController
                 'draft' => 'Draft'
             ])
             ->default('draft');
-    
+        // get current user id
         Announcement::creating(function ($entry) {
             $entry->user_id = backpack_user()->id;
         });
-        
-        /**
-         * Fields can be defined using the fluent syntax:
-         * - CRUD::field('price')->type('number');
-         */
     }
 
     /**

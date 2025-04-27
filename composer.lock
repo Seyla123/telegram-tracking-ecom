@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0bc80904f8a61da82e6bff9a3759499",
+    "content-hash": "4ac0ac9b0cc1a4210f5376f7e12331ff",
     "packages": [
         {
             "name": "backpack/basset",
@@ -3939,41 +3939,6 @@
             "time": "2024-04-27T21:32:50+00:00"
         },
         {
-            "name": "seav-seyla/announcements",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "packages/seavseyla/announcements",
-                "reference": "336cb48bdf9cb5e920c1dbb7d8f4c41efe9d28d9"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "SeavSeyla\\Announcements\\AnnouncementPackageServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SeavSeyla\\Announcements\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Seav Seyla",
-                    "email": "Mrrseyla.758@gmail.com"
-                }
-            ],
-            "description": "A Laravel package for CRUD announcements.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "seav-seyla/api-response",
             "version": "dev-main",
             "source": {
@@ -4017,6 +3982,47 @@
                 "source": "https://github.com/Seyla123/api-response/tree/main"
             },
             "time": "2025-04-23T02:01:04+00:00"
+        },
+        {
+            "name": "seav-seyla/telegram-ecom",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/seavseyla/telegramecom",
+                "reference": "93eb198c2594180838ad515abeb74fde2b099140"
+            },
+            "require": {
+                "illuminate/contracts": "^12.0",
+                "illuminate/support": "^12.0",
+                "livewire/livewire": "^3.0",
+                "php": "^8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SeavSeyla\\TelegramEcom\\TelegramEcomPackageServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SeavSeyla\\TelegramEcom\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Seav Seyla",
+                    "email": "Mrrseyla.758@gmail.com"
+                }
+            ],
+            "description": "A Laravel package for telegram ecommerce.",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "symfony/clock",
@@ -8873,8 +8879,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "seav-seyla/announcements": 20,
-        "seav-seyla/api-response": 20
+        "seav-seyla/api-response": 20,
+        "seav-seyla/telegram-ecom": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

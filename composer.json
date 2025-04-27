@@ -15,8 +15,8 @@
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6",
-        "seav-seyla/announcements": "dev-main",
-        "seav-seyla/api-response": "dev-main"
+        "seav-seyla/api-response": "dev-main",
+        "seav-seyla/telegram-ecom": "dev-main"
     },
     "require-dev": {
         "backpack/generators": "^4.0",
@@ -31,7 +31,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "packages/seavseyla/announcements"
+            "url": "packages/seavseyla/telegramecom"
         }
     ],
     "autoload": {
