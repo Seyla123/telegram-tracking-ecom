@@ -16,7 +16,7 @@
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6",
         "seav-seyla/api-response": "dev-main",
-        "seav-seyla/telegram-ecom": "dev-main"
+        "seav-seyla/telegram-ecom": "dev-develop"
     },
     "require-dev": {
         "backpack/generators": "^4.0",
